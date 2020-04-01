@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+	<meta charset="utf-8"><title>Update your product</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="card">
+			<div class="card-header"> <h3 th:text="${ID_Upd.designation}"/></div>
+			<div class="card-body">
+				<form th:object="${ID_Upd}" th:modelAttribute="ID_Upd" th:action="@{updating}" th:method="POST">
+				  <div class="form-group">
+				      <label>ID</label>
+				      <input type="text" class="form-control" th:field="*{id}" readonly>
+				  </div>
+				  <div class="form-group">
+				      <label>Designation</label>
+				      <input type="text" class="form-control" th:field="*{designation}" placeholder="Designation">
+				  </div>
+				  <div class="form-group">
+				    <label>Prix</label>
+				    <input type="text" class="form-control" th:field="*{prix}"  placeholder="Prix">
+				  </div>
+				  <div class="form-group">
+				    <label>Quantité</label>
+				    <input type="text" class="form-control" name="qte" id="qte" th:field="*{quantite}"  
+				    	   placeholder="Quantité">
+				  </div>
+				  <center><button type="submit" class="btn btn-success btn-lg">Modifier</button></center>
+				</form>
+			</div></div></div>
+</body>
+</html>
+
